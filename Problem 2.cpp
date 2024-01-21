@@ -5,37 +5,33 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    int arr[100],i,n,f=0;
+
+
+    int a[100],n,k;
     cout<<"Enter Array Size: ";
-    cin>> n;
+    cin>>n;
 
-    cout<<"Enter array:";
-    for (i=0; i<n; i++)
+    cout<<endl<<"Enter k step: ";
+    cin>>k;
+
+    cout<<endl<<"Enter Your Array: ";
+    for(int i=0; i<n; i++)
     {
-        cin>> arr[i] ;
+        cin>> a[i];
     }
 
-    //Before rotate
+    k=k%n;
 
-    cout<<"Orginal Array:";
-    for (i=0; i<n; i++)
+    for(int i=0; i<n; i++)
     {
-        cout<< arr[i] <<" ";
+        if(i<k)
+            cout<<(a[n+i-k])<<" ";
+        else
+            cout<<(a[i-k])<<" ";
     }
-    cout<<endl;
+    cout<<endl<<endl;
 
-    //After rotate
-
-    cout<<"Rotate Array:";
-    for (i=n-1; i>=0; i--)
-    {
-        cout<< arr[i] <<" " ;
-    }
-
-    return 0;
+    return 0 ;
 }
-
-
